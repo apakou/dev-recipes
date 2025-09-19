@@ -210,7 +210,7 @@ export default function Home({ recipes }: HomeProps) {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                     <span className="text-sm font-medium text-purple-900 dark:text-purple-300">
-                      Showing results for "{searchTerm}"
+                      Showing results for &ldquo;{searchTerm}&rdquo;
                     </span>
                   </div>
                 )}
@@ -254,7 +254,7 @@ export default function Home({ recipes }: HomeProps) {
                     No recipes found
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-                    We couldn't find any recipes matching your search. Try adjusting your search terms or 
+                    We couldn&apos;t find any recipes matching your search. Try adjusting your search terms or 
                     <button 
                       onClick={clearSearch}
                       className="text-purple-600 dark:text-purple-400 hover:underline ml-1 font-medium"
