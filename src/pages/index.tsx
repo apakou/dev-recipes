@@ -75,15 +75,13 @@ export default function Home({ recipes }: HomeProps) {
             <div className="flex items-center justify-between h-16">
               {/* Logo and Title */}
               <div className="flex items-center gap-3">
-                <div className="bg-[#0090FF] p-2 rounded-lg">
                   <Image
                     src="/logo.png"
                     alt="DevRecipes Logo"
-                    width={32}
-                    height={32}
-                    className="w-8 h-8 object-contain brightness-0 invert"
+                    width={62}
+                    height={62}
+                    className="w-20 object-contain"
                   />
-                </div>
                 <div>
                   <h1 className="text-xl font-bold text-gray-900 dark:text-white">DevRecipes</h1>
                   <p className="text-xs text-gray-500 dark:text-gray-400">Code recipes for everyone</p>
