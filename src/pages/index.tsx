@@ -270,7 +270,7 @@ export default function Home({ recipes }: HomeProps) {
                 
                 <div className="flex items-center justify-center gap-6 mb-6">
                   <a 
-                    href="https://github.com" 
+                    href="https://github.com/apakou/dev-recipes" 
                     className="p-3 rounded-xl bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                     aria-label="GitHub"
                   >
@@ -279,7 +279,7 @@ export default function Home({ recipes }: HomeProps) {
                     </svg>
                   </a>
                   <a 
-                    href="https://twitter.com" 
+                    href="https://twitter.comhttps://x.com/PakouNiel" 
                     className="p-3 rounded-xl bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                     aria-label="Twitter"
                   >
