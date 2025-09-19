@@ -97,8 +97,8 @@ export default function Home({ recipes }: HomeProps) {
                       <Image
                         src="/logo.png"
                         alt="DevRecipes Logo"
-                        width={64}
-                        height={64}
+                        width={74}
+                        height={74}
                         className="w-16 h-16 object-contain"
                       />
                     </div>
