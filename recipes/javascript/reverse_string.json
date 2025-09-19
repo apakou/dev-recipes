@@ -1,0 +1,7 @@
+{
+  "title": "Inverser une chaîne",
+  "language": "JavaScript",
+  "description": "Une fonction pour inverser une chaîne de caractères.",
+  "code": "function reverseString(str) {\n  return str.split('').reverse().join('');\n}",
+  "tags": ["string", "manipulation", "reverse"]
+}
