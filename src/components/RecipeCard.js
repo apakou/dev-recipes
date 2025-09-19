@@ -29,13 +29,13 @@ const RecipeCard = ({ recipe }) => {
   return (
     <div className="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl hover:shadow-gray-200/20 dark:hover:shadow-gray-900/40 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-purple-50/30 dark:from-blue-900/10 dark:via-transparent dark:to-purple-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-blue-50/30 dark:from-blue-900/10 dark:via-transparent dark:to-blue-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       <div className="relative p-6">
         {/* Header with improved layout */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-[#0090FF] dark:group-hover:text-[#0090FF] transition-colors duration-200">
               {recipe.title}
             </h3>
             <div className="flex items-center gap-2">
@@ -125,7 +125,7 @@ const RecipeCard = ({ recipe }) => {
       </div>
       
       {/* Subtle bottom accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-violet-500 to-fuchsia-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#0090FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     </div>
   );
 };
