@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 import { getRecipes } from '../utils/recipes';
 import RecipeCard from '../components/RecipeCard';
 
@@ -72,12 +73,12 @@ export default function Home({ recipes }: HomeProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-gray-900 dark:via-blue-950/20 dark:to-indigo-950/30">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50/30 to-violet-50/50 dark:from-gray-900 dark:via-purple-950/20 dark:to-violet-950/30">
         {/* Animated background elements */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-32 w-96 h-96 bg-gradient-to-br from-blue-400/10 to-purple-600/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute -bottom-40 -left-32 w-96 h-96 bg-gradient-to-tr from-indigo-400/10 to-pink-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-cyan-400/5 to-blue-600/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+          <div className="absolute -top-40 -right-32 w-96 h-96 bg-gradient-to-br from-purple-400/10 to-violet-600/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute -bottom-40 -left-32 w-96 h-96 bg-gradient-to-tr from-violet-400/10 to-fuchsia-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-purple-400/5 to-violet-600/5 rounded-full blur-3xl animate-pulse delay-500"></div>
         </div>
 
         {/* Modern Header */}
@@ -89,25 +90,39 @@ export default function Home({ recipes }: HomeProps) {
             <div className="text-center">
               {/* Modern logo/title */}
               <div className="mb-6">
-                <h1 className="text-6xl md:text-7xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent mb-4 tracking-tight">
-                  DevRecipes
-                </h1>
+                <div className="flex items-center justify-center gap-4 mb-6">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-violet-500/20 rounded-2xl blur-lg"></div>
+                    <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-3 rounded-2xl border border-gray-200/50 dark:border-gray-700/50 shadow-lg">
+                      <Image
+                        src="/logo.png"
+                        alt="DevRecipes Logo"
+                        width={64}
+                        height={64}
+                        className="w-16 h-16 object-contain"
+                      />
+                    </div>
+                  </div>
+                  <h1 className="text-6xl md:text-7xl font-black bg-gradient-to-r from-purple-600 via-violet-600 to-fuchsia-600 dark:from-purple-400 dark:via-violet-400 dark:to-fuchsia-400 bg-clip-text text-transparent tracking-tight">
+                    DevRecipes
+                  </h1>
+                </div>
                 <div className="flex items-center justify-center gap-2 mb-6">
-                  <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                  <div className="h-1 w-6 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full"></div>
-                  <div className="h-1 w-12 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full"></div>
+                  <div className="h-1 w-12 bg-gradient-to-r from-purple-500 to-violet-500 rounded-full"></div>
+                  <div className="h-1 w-6 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full"></div>
+                  <div className="h-1 w-12 bg-gradient-to-r from-fuchsia-500 to-purple-500 rounded-full"></div>
                 </div>
               </div>
               
               <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed font-medium">
                 A curated collection of 
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 font-semibold"> code recipes </span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-violet-600 dark:from-purple-400 dark:to-violet-400 font-semibold"> code recipes </span>
                 to help new contributors make their first open-source contribution
               </p>
               
               {/* Modern Search Input */}
               <div className="max-w-xl mx-auto relative group">
-                <div className={`absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-indigo-500/20 rounded-2xl blur transition-all duration-300 ${
+                <div className={`absolute inset-0 bg-gradient-to-r from-purple-500/20 via-violet-500/20 to-fuchsia-500/20 rounded-2xl blur transition-all duration-300 ${
                   isSearchFocused ? 'opacity-100 scale-105' : 'opacity-0 group-hover:opacity-50'
                 }`}></div>
                 
@@ -115,7 +130,7 @@ export default function Home({ recipes }: HomeProps) {
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                     <svg
                       className={`h-6 w-6 transition-colors duration-200 ${
-                        isSearchFocused ? 'text-blue-500 dark:text-blue-400' : 'text-gray-400'
+                        isSearchFocused ? 'text-purple-500 dark:text-purple-400' : 'text-gray-400'
                       }`}
                       fill="none"
                       stroke="currentColor"
@@ -137,7 +152,7 @@ export default function Home({ recipes }: HomeProps) {
                     onChange={handleSearchChange}
                     onFocus={() => setIsSearchFocused(true)}
                     onBlur={() => setIsSearchFocused(false)}
-                    className="block w-full pl-12 pr-12 py-4 text-lg border-0 rounded-2xl bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-xl ring-1 ring-gray-200/50 dark:ring-gray-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-blue-400/50 transition-all duration-300"
+                    className="block w-full pl-12 pr-12 py-4 text-lg border-0 rounded-2xl bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-xl ring-1 ring-gray-200/50 dark:ring-gray-700/50 focus:outline-none focus:ring-2 focus:ring-purple-500/50 dark:focus:ring-purple-400/50 transition-all duration-300"
                   />
                   
                   {searchTerm && (
@@ -190,11 +205,11 @@ export default function Home({ recipes }: HomeProps) {
                 </div>
                 
                 {searchTerm && (
-                  <div className="flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/30 rounded-xl border border-blue-200 dark:border-blue-800">
-                    <svg className="h-4 w-4 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 dark:bg-purple-900/30 rounded-xl border border-purple-200 dark:border-purple-800">
+                    <svg className="h-4 w-4 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
-                    <span className="text-sm font-medium text-blue-900 dark:text-blue-300">
+                    <span className="text-sm font-medium text-purple-900 dark:text-purple-300">
                       Showing results for "{searchTerm}"
                     </span>
                   </div>
@@ -242,7 +257,7 @@ export default function Home({ recipes }: HomeProps) {
                     We couldn't find any recipes matching your search. Try adjusting your search terms or 
                     <button 
                       onClick={clearSearch}
-                      className="text-blue-600 dark:text-blue-400 hover:underline ml-1 font-medium"
+                      className="text-purple-600 dark:text-purple-400 hover:underline ml-1 font-medium"
                     >
                       browse all recipes
                     </button>
@@ -260,9 +275,22 @@ export default function Home({ recipes }: HomeProps) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
               <div className="text-center">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-2">
-                    DevRecipes
-                  </h3>
+                  <div className="flex items-center justify-center gap-3 mb-4">
+                    <div className="relative">
+                      <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-2 rounded-xl border border-gray-200/50 dark:border-gray-700/50 shadow-md">
+                        <Image
+                          src="/logo.png"
+                          alt="DevRecipes Logo"
+                          width={32}
+                          height={32}
+                          className="w-8 h-8 object-contain"
+                        />
+                      </div>
+                    </div>
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-violet-600 dark:from-purple-400 dark:to-violet-400 bg-clip-text text-transparent">
+                      DevRecipes
+                    </h3>
+                  </div>
                   <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto">
                     Open source code recipes to help developers contribute to the community
                   </p>
@@ -279,7 +307,7 @@ export default function Home({ recipes }: HomeProps) {
                     </svg>
                   </a>
                   <a 
-                    href="https://twitter.comhttps://x.com/PakouNiel" 
+                    href="https://x.com/PakouNiel" 
                     className="p-3 rounded-xl bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                     aria-label="Twitter"
                   >
