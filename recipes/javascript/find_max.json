@@ -1,0 +1,7 @@
+{
+  "title": "Find Array Maximum",
+  "language": "JavaScript",
+  "description": "A function to find the maximum value in an array of numbers.",
+  "code": "function findMax(numbers) {\n  return Math.max(...numbers);\n}",
+  "tags": ["array", "math", "maximum"]
+}
