@@ -1,0 +1,7 @@
+{
+  "title": "TypeScript Generic Functions",
+  "language": "TypeScript",
+  "description": "Examples of generic functions that can work with different types while maintaining type safety. Generics enable creating reusable and flexible code.",
+  "code": "// Generic function example\nfunction getFirstItem<T>(array: T[]): T | undefined {\n  return array[0];\n}\n\n// Usage with type safety\nconst firstNumber = getFirstItem([1, 2, 3]); // number | undefined\nconst firstFruit = getFirstItem(['apple', 'banana']); // string | undefined",
+  "tags": ["generics", "functions", "types", "reusable", "typescript"]
+}
